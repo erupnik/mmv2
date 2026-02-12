@@ -1,0 +1,1660 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Free, open-source photogrammetry suite for 3D reconstruction">
+      
+      
+      
+        <link rel="canonical" href="https://erupnik.github.io/mmv2/commands/">
+      
+      
+        <link rel="prev" href="../features/">
+      
+      
+        <link rel="next" href="../tutorials/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.0">
+    
+    
+      
+        <title>Command Reference - MMVII — MicMac v2</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.9f615399.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.649f08f9.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="blue">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#command-reference" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="MMVII — MicMac v2" class="md-header__button md-logo" aria-label="MMVII — MicMac v2" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MMVII — MicMac v2
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Command Reference
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/micmacIGN/micmac" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    micmacIGN/micmac
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="MMVII — MicMac v2" class="md-nav__button md-logo" aria-label="MMVII — MicMac v2" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    MMVII — MicMac v2
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/micmacIGN/micmac" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    micmacIGN/micmac
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../building/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Building
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../features/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Features
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Command Reference
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Command Reference
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#orientation-bundle-adjustment" class="md-nav__link">
+    Orientation &amp; Bundle Adjustment
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dense-matching" class="md-nav__link">
+    Dense Matching
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coded-targets" class="md-nav__link">
+    Coded Targets
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#point-clouds-mesh" class="md-nav__link">
+    Point Clouds &amp; Mesh
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ground-control-points" class="md-nav__link">
+    Ground Control Points
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tie-points" class="md-nav__link">
+    Tie Points
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lines" class="md-nav__link">
+    Lines
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coordinate-systems" class="md-nav__link">
+    Coordinate Systems
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#radiometry" class="md-nav__link">
+    Radiometry
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#topography" class="md-nav__link">
+    Topography
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#block-instruments" class="md-nav__link">
+    Block Instruments
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#image-processing" class="md-nav__link">
+    Image Processing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-management" class="md-nav__link">
+    Project Management
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mmvii-management" class="md-nav__link">
+    MMVII Management
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing" class="md-nav__link">
+    Testing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#personal-experimental" class="md-nav__link">
+    Personal / Experimental
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tutorials
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Tutorials
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/coded-targets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Coded Target Detection
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/aerial-satellite/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Aerial + Satellite Fusion
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/legacy-modern/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Legacy + Modern Imagery
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/cern-metrology/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Industrial Metrology (CERN)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/image-development/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Image Development & Mesh
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/rpc-satellite/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RPC Satellite Processing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/topographic-survey/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Topographic Survey
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contributing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bibliography/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bibliography
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../license/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    License
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#orientation-bundle-adjustment" class="md-nav__link">
+    Orientation &amp; Bundle Adjustment
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dense-matching" class="md-nav__link">
+    Dense Matching
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coded-targets" class="md-nav__link">
+    Coded Targets
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#point-clouds-mesh" class="md-nav__link">
+    Point Clouds &amp; Mesh
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ground-control-points" class="md-nav__link">
+    Ground Control Points
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tie-points" class="md-nav__link">
+    Tie Points
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lines" class="md-nav__link">
+    Lines
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coordinate-systems" class="md-nav__link">
+    Coordinate Systems
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#radiometry" class="md-nav__link">
+    Radiometry
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#topography" class="md-nav__link">
+    Topography
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#block-instruments" class="md-nav__link">
+    Block Instruments
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#image-processing" class="md-nav__link">
+    Image Processing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-management" class="md-nav__link">
+    Project Management
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mmvii-management" class="md-nav__link">
+    MMVII Management
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing" class="md-nav__link">
+    Testing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#personal-experimental" class="md-nav__link">
+    Personal / Experimental
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="command-reference">Command Reference<a class="headerlink" href="#command-reference" title="Permanent link">&para;</a></h1>
+<p>MMVII provides <strong>118 commands</strong> organized by domain. Run <code>MMVII help</code> for a complete list.</p>
+<p>Every MMVII command follows the same pattern:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>MMVII CommandName MandatoryArg1 MandatoryArg2 [OptArg1=value] [OptArg2=value]
+</code></pre></div>
+<p>Get help on any command with: <code>MMVII CommandName help</code></p>
+<div class="admonition note">
+<p class="admonition-title">Auto-generated</p>
+<p>This page is auto-generated from the source code by <code>scripts/generate_commands.py</code>.</p>
+</div>
+<h2 id="orientation-bundle-adjustment">Orientation &amp; Bundle Adjustment<a class="headerlink" href="#orientation-bundle-adjustment" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>___OriPoseArboTriplet</code></td>
+<td>Create arborescence of triplet (internal use essentially)</td>
+</tr>
+<tr>
+<td><code>BlockCamInit</code></td>
+<td>Compute initial calibration of rigid bloc cam</td>
+</tr>
+<tr>
+<td><code>CERN_ImportClino</code></td>
+<td>A temporary command to arrange clino format from file splited in different folders</td>
+</tr>
+<tr>
+<td><code>CERN_InitRep</code></td>
+<td>Initialize the repere local to wire/sphere/clino</td>
+</tr>
+<tr>
+<td><code>ClinoInit</code></td>
+<td>Initialisation of inclinometer</td>
+</tr>
+<tr>
+<td><code>ExportUndistMesIm</code></td>
+<td>Export image points measurements corrected from distorsion</td>
+</tr>
+<tr>
+<td><code>ExtractLine</code></td>
+<td>Extraction of lines</td>
+</tr>
+<tr>
+<td><code>ExtractLine</code></td>
+<td>Extraction of lines</td>
+</tr>
+<tr>
+<td><code>ImportAiconCalib</code></td>
+<td>Import a camera calibration from an Aicon file</td>
+</tr>
+<tr>
+<td><code>ImportInitExtSens</code></td>
+<td>Import an  Initial External Sensor</td>
+</tr>
+<tr>
+<td><code>ImportOri</code></td>
+<td>Import/Convert basic Orient file in MMVII format</td>
+</tr>
+<tr>
+<td><code>ImportTripletV1</code></td>
+<td>Import/Convert triplets in MMVII format</td>
+</tr>
+<tr>
+<td><code>OriBundleAdj</code></td>
+<td>Bundle adjusment between images, using several observations/constraint</td>
+</tr>
+<tr>
+<td><code>OriParametrizeSensor</code></td>
+<td>Import an External Sensor</td>
+</tr>
+<tr>
+<td><code>OriPoseEstim11P</code></td>
+<td>Pose estimation from GCP, uncalibrated case</td>
+</tr>
+<tr>
+<td><code>OriPoseEstimCheckGCPDist</code></td>
+<td>Check GCP distribution for pose estimation</td>
+</tr>
+<tr>
+<td><code>OriPoseEstimRel2Im</code></td>
+<td>Estimate relative orientation with different algorithms</td>
+</tr>
+<tr>
+<td><code>OriPoseEstimSpaceResection</code></td>
+<td>Pose estimation from GCP, calibrated case</td>
+</tr>
+<tr>
+<td><code>ReportBlock</code></td>
+<td>Report different measures relative to a block of cam</td>
+</tr>
+<tr>
+<td><code>ReportClino</code></td>
+<td>Report on Clino Calibration&amp;Measures</td>
+</tr>
+<tr>
+<td><code>ReportPoseCmp</code></td>
+<td>Reports on pose comparison</td>
+</tr>
+<tr>
+<td><code>SimulOriPerturbRandom</code></td>
+<td>Perturbate random de orientation (for simulations)</td>
+</tr>
+<tr>
+<td><code>TestSensor</code></td>
+<td>Test orientation functions of a sensor : coherence Direct/Inverse, ground truth 2D/3D correspondance, generate 3d-2d corresp</td>
+</tr>
+<tr>
+<td><code>V1OriConv</code></td>
+<td>Convert orientation of MMV1  to MMVII</td>
+</tr>
+<tr>
+<td><code>V2ImportCalib</code></td>
+<td>Import a calibration from another MMVII project (just copy files)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="dense-matching">Dense Matching<a class="headerlink" href="#dense-matching" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>DenseMatchEpipEval</code></td>
+<td>Evaluation of dense matching</td>
+</tr>
+<tr>
+<td><code>DM01DensifyRefMatch</code></td>
+<td>Create dense map using a sparse one (LIDAR) with or without images</td>
+</tr>
+<tr>
+<td><code>DM0BisTestHypStep</code></td>
+<td>Compute statistic to fix the relation hiden-part/step-paralax</td>
+</tr>
+<tr>
+<td><code>DM1ExtractVecLearn</code></td>
+<td>Extract ground truch vector to learn Dense Matching</td>
+</tr>
+<tr>
+<td><code>DM2CalcHistoCarac</code></td>
+<td>Compute and save histogramm on single caracteristics</td>
+</tr>
+<tr>
+<td><code>DM3CalcHistoNDim</code></td>
+<td>Compute and save histogramm on multiple caracteristics</td>
+</tr>
+<tr>
+<td><code>DM4FillCubeCost</code></td>
+<td>Fill a cube with matching costs</td>
+</tr>
+<tr>
+<td><code>DM4MatchMultipleOrtho</code></td>
+<td>Compute similarite of overlapping ortho images</td>
+</tr>
+<tr>
+<td><code>DM5StatMatch</code></td>
+<td>Make some evaluation of dense Match with a reference</td>
+</tr>
+</tbody>
+</table>
+<h2 id="coded-targets">Coded Targets<a class="headerlink" href="#coded-targets" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CodedTargetCheckBoardExtract</code></td>
+<td>Extract coded target from images</td>
+</tr>
+<tr>
+<td><code>CodedTargetExtract</code></td>
+<td>Extract coded target from images</td>
+</tr>
+<tr>
+<td><code>CodedTargetGenerate</code></td>
+<td>Generate images for coded target</td>
+</tr>
+<tr>
+<td><code>CodedTargetGenerateEncoding</code></td>
+<td>Generate en encoding for coded target, according to some specification</td>
+</tr>
+<tr>
+<td><code>CodedTargetSimul</code></td>
+<td>Simulate images of coded targets, with ground truth</td>
+</tr>
+<tr>
+<td><code>SimulImageSphere</code></td>
+<td>Simulate images of spheres taking into account perspectives &amp; distortions</td>
+</tr>
+</tbody>
+</table>
+<h2 id="point-clouds-mesh">Point Clouds &amp; Mesh<a class="headerlink" href="#point-clouds-mesh" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CloudMMVII2Ply</code></td>
+<td>Generate a ply version of  MMVII-Cloud</td>
+</tr>
+<tr>
+<td><code>CloudMMVIIClip</code></td>
+<td>Clip a MMVII-Cloud format  using a box</td>
+</tr>
+<tr>
+<td><code>CloudMMVIIColorate</code></td>
+<td>Generate a colorate version of  MMVII-Cloud</td>
+</tr>
+<tr>
+<td><code>CloudMMVIIImProj</code></td>
+<td>Generate image projections of coloured point cloud</td>
+</tr>
+<tr>
+<td><code>ImportStaticScan</code></td>
+<td>Import static scan cloud point into instrument raster geometry</td>
+</tr>
+<tr>
+<td><code>ImportTxtCloud</code></td>
+<td>Import/Convert cloud point in txt format (ply ...)</td>
+</tr>
+<tr>
+<td><code>MeshCheck</code></td>
+<td>Make some checking on a mesh, eventually correct it 4 easy defaults</td>
+</tr>
+<tr>
+<td><code>MeshCloudClip</code></td>
+<td>Clip a point mesh/cloud  using a region</td>
+</tr>
+<tr>
+<td><code>MeshDev</code></td>
+<td>Generate a planar devlopment minimizing deformations</td>
+</tr>
+<tr>
+<td><code>MeshDevGen</code></td>
+<td>Generate artificial(synthetic) devlopable surface</td>
+</tr>
+<tr>
+<td><code>MeshProjImage</code></td>
+<td>(internal) Project a mes on an image to prepare devlopment</td>
+</tr>
+<tr>
+<td><code>TestSLRE</code></td>
+<td>Make some quik&amp;dirty test on Static Lidar Reverse Engeneering</td>
+</tr>
+</tbody>
+</table>
+<h2 id="ground-control-points">Ground Control Points<a class="headerlink" href="#ground-control-points" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ImportGCP</code></td>
+<td>Import/Convert basic GCP file in MMVII format</td>
+</tr>
+<tr>
+<td><code>ImportM32</code></td>
+<td>Import/Convert Set of 3d-2d corresspondances</td>
+</tr>
+<tr>
+<td><code>ImportMesImGCP</code></td>
+<td>Import/Convert basic image point measures into MMVII format</td>
+</tr>
+<tr>
+<td><code>MergeMesImGCP</code></td>
+<td>Merge different files of image measur of GCP</td>
+</tr>
+<tr>
+<td><code>MMV2_MesIm_2_MMV1</code></td>
+<td>Export image measurements format from MicMac v2 to MicMac v1</td>
+</tr>
+<tr>
+<td><code>ReportGCP</code></td>
+<td>Reports on GCP projection</td>
+</tr>
+<tr>
+<td><code>ReportMesIm</code></td>
+<td>Reports on Images measures compared to a reference</td>
+</tr>
+<tr>
+<td><code>V1ConvertGCPIm</code></td>
+<td>Convert image &amp; gound measures from v1 to v2 format</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tie-points">Tie Points<a class="headerlink" href="#tie-points" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CompPIB</code></td>
+<td>This command is used compute Parameter of Binary Index</td>
+</tr>
+<tr>
+<td><code>ImportTiePMul</code></td>
+<td>Import/Convert basic TieP mult file in MMVII format</td>
+</tr>
+<tr>
+<td><code>PseudoIntersect</code></td>
+<td>Pseudo Intersect: 2D points to 3D coords</td>
+</tr>
+<tr>
+<td><code>ReportSegIm</code></td>
+<td>Reports on SegImage comparison</td>
+</tr>
+<tr>
+<td><code>ReportTieP</code></td>
+<td>Reports on TieP projection</td>
+</tr>
+<tr>
+<td><code>TieP-AimeBasicMatch</code></td>
+<td>Match caracteristic points and descriptors computed with Aime method</td>
+</tr>
+<tr>
+<td><code>TieP-AimePCar</code></td>
+<td>Compute caracteristic points and descriptors, using Aime method</td>
+</tr>
+<tr>
+<td><code>TieP2PMul</code></td>
+<td>Convert TieP from by-pair  to multiple</td>
+</tr>
+<tr>
+<td><code>TiePConvert</code></td>
+<td>Convert homologous point</td>
+</tr>
+</tbody>
+</table>
+<h2 id="lines">Lines<a class="headerlink" href="#lines" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ImportLine</code></td>
+<td>Import/Convert Set of lines extracted</td>
+</tr>
+<tr>
+<td><code>ImportMeasuresClino</code></td>
+<td>Import/Convert file of clinometers from raw to MMVII format</td>
+</tr>
+</tbody>
+</table>
+<h2 id="coordinate-systems">Coordinate Systems<a class="headerlink" href="#coordinate-systems" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GCPChSysCo</code></td>
+<td>Change SysCo of GCP</td>
+</tr>
+<tr>
+<td><code>OriChSysCo</code></td>
+<td>Chang coord system of an orientation</td>
+</tr>
+<tr>
+<td><code>OriCreateCalib</code></td>
+<td>Create initial internal calibration</td>
+</tr>
+<tr>
+<td><code>SysCoCreateAlias</code></td>
+<td>Create a coordinate system in the standard folder</td>
+</tr>
+<tr>
+<td><code>SysCoCreateRTL</code></td>
+<td>Create RTL (local tangent repair)</td>
+</tr>
+<tr>
+<td><code>TestProj</code></td>
+<td>Test Proj</td>
+</tr>
+</tbody>
+</table>
+<h2 id="radiometry">Radiometry<a class="headerlink" href="#radiometry" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>RadiomComputeEqual</code></td>
+<td>Estimate radiometric model for equalization</td>
+</tr>
+<tr>
+<td><code>RadiomCreateModel</code></td>
+<td>Create an initial neutral radiometric model</td>
+</tr>
+</tbody>
+</table>
+<h2 id="topography">Topography<a class="headerlink" href="#topography" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ImportOBS</code></td>
+<td>Import Obs file in MMVII project</td>
+</tr>
+<tr>
+<td><code>TopoAdj</code></td>
+<td>Topo adjustment</td>
+</tr>
+</tbody>
+</table>
+<h2 id="block-instruments">Block Instruments<a class="headerlink" href="#block-instruments" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>BlockInstrEdit</code></td>
+<td>Create/Edit a block of instruments</td>
+</tr>
+<tr>
+<td><code>BlockInstrInitCam</code></td>
+<td>Init  camera poses inside a block of instrument</td>
+</tr>
+<tr>
+<td><code>BlockInstrInitClino</code></td>
+<td>Init  camera poses inside a block of instrument</td>
+</tr>
+<tr>
+<td><code>BlockInstrReport</code></td>
+<td>Make a report on a block of instrument confronted to data</td>
+</tr>
+</tbody>
+</table>
+<h2 id="image-processing">Image Processing<a class="headerlink" href="#image-processing" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CodedTargetCircExtract</code></td>
+<td>Extract coded target from images</td>
+</tr>
+<tr>
+<td><code>CodedTargetCompleteUncoded</code></td>
+<td>Complete detection, with uncoded target</td>
+</tr>
+<tr>
+<td><code>CodedTargetRefineCirc</code></td>
+<td>Refine circ target with shape-distorsion using 3d-predict</td>
+</tr>
+<tr>
+<td><code>DeplStack</code></td>
+<td>Stack a serie multi date displacment</td>
+</tr>
+<tr>
+<td><code>ExifData</code></td>
+<td>Display Exif metadata from image file</td>
+</tr>
+<tr>
+<td><code>ExtractBubbles</code></td>
+<td>Extraction of Bubbles</td>
+</tr>
+<tr>
+<td><code>ImageCalcDisc</code></td>
+<td>Compute value of discontinuities in images</td>
+</tr>
+<tr>
+<td><code>ImageScale_Basic</code></td>
+<td>Down scale an image, basic Gauss-Filter + integer decimation, for backwrad compatibility</td>
+</tr>
+<tr>
+<td><code>ImageScale_Std</code></td>
+<td>Down scale an image, basic Gauss-Filter + integer decimation, for backwrad compatibility</td>
+</tr>
+<tr>
+<td><code>ImageStack</code></td>
+<td>Stack a serie of images</td>
+</tr>
+<tr>
+<td><code>MeshImageDevlp</code></td>
+<td>Compute devlopped images from 3d-mesh, 2d-dev-mesh and ori</td>
+</tr>
+<tr>
+<td><code>SimulDispl</code></td>
+<td>Generate smooth displacement and deformed image</td>
+</tr>
+</tbody>
+</table>
+<h2 id="project-management">Project Management<a class="headerlink" href="#project-management" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>EditCalcMTDI</code></td>
+<td>Edit the calculator of Meta-Data images</td>
+</tr>
+<tr>
+<td><code>EditRel</code></td>
+<td>This command is used to edit set of pairs of files</td>
+</tr>
+<tr>
+<td><code>EditSet</code></td>
+<td>This command is used to edit set of file</td>
+</tr>
+<tr>
+<td><code>GenerateSpecifSerial</code></td>
+<td>Generate specification+some sample for serialization</td>
+</tr>
+<tr>
+<td><code>TutoFormalDeriv</code></td>
+<td>Tutorial for serialization</td>
+</tr>
+<tr>
+<td><code>TutoSerial</code></td>
+<td>Tutorial for serialization</td>
+</tr>
+<tr>
+<td><code>UtiDicoRename</code></td>
+<td>This command create a dictionnary after parsing a file, can be used for renaming</td>
+</tr>
+</tbody>
+</table>
+<h2 id="mmvii-management">MMVII Management<a class="headerlink" href="#mmvii-management" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GenArgsSpec</code></td>
+<td>This command is used to generate arguments specifications</td>
+</tr>
+<tr>
+<td><code>GenCodeSymDer</code></td>
+<td>Generation of code for symbolic derivatives</td>
+</tr>
+</tbody>
+</table>
+<h2 id="testing">Testing<a class="headerlink" href="#testing" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Bench</code></td>
+<td>This command execute (many) self verification on MicMac-V2 behaviour</td>
+</tr>
+<tr>
+<td><code>Cpp11</code></td>
+<td>This command execute some test for to check my understanding of C++11</td>
+</tr>
+<tr>
+<td><code>TestAPBI</code></td>
+<td>Internal only !! Used by APBI bench</td>
+</tr>
+<tr>
+<td><code>TestCovProp</code></td>
+<td>Test on covariance propagation</td>
+</tr>
+<tr>
+<td><code>TestEigen</code></td>
+<td>This command execute some experiments eigen (matrix manipulation) library</td>
+</tr>
+<tr>
+<td><code>TestMPD</code></td>
+<td>This used a an entry point to all quick and dirty test by MPD ...</td>
+</tr>
+<tr>
+<td><code>TestRecall</code></td>
+<td>Use in Bench to Test Recall of MMVII by itself</td>
+</tr>
+</tbody>
+</table>
+<h2 id="personal-experimental">Personal / Experimental<a class="headerlink" href="#personal-experimental" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>MediaCat</code></td>
+<td>This command is used for concatening medias (interface to ffmpeg)</td>
+</tr>
+<tr>
+<td><code>MediaDaisy</code></td>
+<td>This command is used to generate audio book to daisy format from mp3 files</td>
+</tr>
+<tr>
+<td><code>MediaReduceVideo</code></td>
+<td>This command is used for reducing the size of video files</td>
+</tr>
+<tr>
+<td><code>MediaWalkman</code></td>
+<td>This command is used to make a random selection of music</td>
+</tr>
+<tr>
+<td><code>TestGraphPart</code></td>
+<td>This command is to make some test on graph partionning</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/micmacIGN/micmac" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections", "navigation.expand", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.4e0fa4ba.min.js"></script>
+      
+    
+  </body>
+</html>
